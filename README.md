@@ -1,0 +1,2 @@
+# Vue-curriculum
+private curriculum
