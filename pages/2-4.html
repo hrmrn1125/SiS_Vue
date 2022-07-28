@@ -699,13 +699,22 @@ header, .context-menu, .megamenu-content, footer{
   2.4 methods parameter</a> by Taiga-Ebihara (<a href="https://codepen.io/taiga-ebihara">@taiga-ebihara</a>)
   on <a href="https://codepen.io">CodePen</a>.</span>
 </p>
-<script async="" src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><p><span>上記はボタンを押すとaddCartメソッドが呼び出され合計金額が増えていく処理ですが、増える金額はそれぞれメソッド呼び出しの際の引数で指定しています。このようにすることで、200円増やすメソッド、300円増やすメソッド......と専用のメソッドを新たに作成する必要なく、効率的に実装することが可能になります。</span></p><p>&nbsp;</p><h2 id='v-on修飾子-'><span>v-on修飾子 </span>🐯</h2><p><span>イベントハンドラ内で event.preventDefault() や event.stopPropagation() を呼び出したい場面は多いかと思います。もちろん、メソッド内でevent.preventDefault() や event.stopPropagation() を宣言することでこの問題は解決できますが、それよりももっと簡単な方法があります。</span></p><p><span>v-on:submit.prevent, v-on:click.stop のように、v-onディレクティブに専用の接尾辞を付けて呼び出すことでpreventDefault()やstopPropagation()と同じ効果が得られます。これらをイベント修飾子と呼びます。</span></p><p><span>Vueにはイベントが発生した際にこれらのDOMイベントの制御のために、記述が簡単な修飾子が複数用意されています。例えば、キーボードイベント発生時に特定のキーにのみ反応するキー修飾子や、特定のマウスボタンにのみ反応するマウスボタン修飾子など、詳細は</span><a href='https://jp.vuejs.org/v2/guide/events.html#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E4%BF%AE%E9%A3%BE%E5%AD%90'><span>公式ガイド</span></a><span>を参照してみてください。</span></p><p><span>DOMイベントの制御を修飾子で行うことによって、メソッド内には純粋なロジックのみを記述することができ、コードの可読性向上に繋がります。</span></p><p>&nbsp;</p><h2 id='チャレンジ課題-'><span>チャレンジ課題 </span>🐰</h2><p><span>今回の課題はこれまでよりやや複雑ですが、一つ一つ処理を整理していけば必ず実装できるはずです。挑戦してみましょう!</span></p><p><span>必要なUI部品</span></p><p><span>・300円、700円、1500円の3つのボタン</span></p><p><span>・合計金額: ○○円という表示</span></p><p><span>・購入する、というボタン</span></p><p>&nbsp;</p><p><span>期待する挙動</span></p><p><span>300円、700円、1500円のボタンを押すとそれぞれの金額が合計金額に加算され、表示が更新されていきます。合計金額が3000円以上になった時点で、予算オーバーとなり「購入する」ボタンが押せなくなります。</span></p><p><a href='https://vimeo.com/570883537'><span>完成のイメージを見る</span></a></p><p>&nbsp;</p><p>&nbsp;</p><div class='footnotes-area'><hr/>
+<script async="" src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script><p><span>上記はボタンを押すとaddCartメソッドが呼び出され合計金額が増えていく処理ですが、増える金額はそれぞれメソッド呼び出しの際の引数で指定しています。このようにすることで、200円増やすメソッド、300円増やすメソッド......と専用のメソッドを新たに作成する必要なく、効率的に実装することが可能になります。</span></p><p>&nbsp;</p><h2 id='v-on修飾子-'><span>v-on修飾子 </span>🐯</h2><p><span>イベントハンドラ内で event.preventDefault() や event.stopPropagation() を呼び出したい場面は多いかと思います。もちろん、メソッド内でevent.preventDefault() や event.stopPropagation() を宣言することでこの問題は解決できますが、それよりももっと簡単な方法があります。</span></p><p><span>v-on:submit.prevent, v-on:click.stop のように、v-onディレクティブに専用の接尾辞を付けて呼び出すことでpreventDefault()やstopPropagation()と同じ効果が得られます。これらをイベント修飾子と呼びます。</span></p><p><span>Vueにはイベントが発生した際にこれらのDOMイベントの制御のために、記述が簡単な修飾子が複数用意されています。例えば、キーボードイベント発生時に特定のキーにのみ反応するキー修飾子や、特定のマウスボタンにのみ反応するマウスボタン修飾子など、詳細は</span><a href='https://jp.vuejs.org/v2/guide/events.html#%E3%82%A4%E3%83%99%E3%83%B3%E3%83%88%E4%BF%AE%E9%A3%BE%E5%AD%90'><span>公式ガイド</span></a><span>を参照してみてください。</span></p><p><span>DOMイベントの制御を修飾子で行うことによって、メソッド内には純粋なロジックのみを記述することができ、コードの可読性向上に繋がります。</span></p><p>&nbsp;</p><h2 id='チャレンジ課題-'><span>チャレンジ課題 </span>🐰</h2><p><span>今回の課題はこれまでよりやや複雑ですが、一つ一つ処理を整理していけば必ず実装できるはずです。挑戦してみましょう!</span></p><p><span>必要なUI部品</span></p><p><span>・300円、700円、1500円の3つのボタン</span></p><p><span>・合計金額: ○○円という表示</span></p><p><span>・購入する、というボタン</span></p><p>&nbsp;</p><p><span>期待する挙動</span></p><p><span>300円、700円、1500円のボタンを押すとそれぞれの金額が合計金額に加算され、表示が更新されていきます。合計金額が3000円以上になった時点で、予算オーバーとなり「購入する」ボタンが押せなくなります。</span></p><p><a href='https://vimeo.com/570883537'><span>完成のイメージを見る</span></a></p>
 <div>
     <p>ここまで終わったら、下記のアンケートフォームにお答えください！（必須）<br>課題の改善にも活かしてまいりますので、ご協力よろしくお願いします！</p>
     <p>
         <a href='https://docs.google.com/forms/d/e/1FAIpQLScjuTWWe2BZctNvH1A6k5g6NJA8nwrGmiv2MOr9vPjOlWzipw/viewform'  target="_blank" rel="noopener noreferrer">Googleフォーム</a>
     </p>
 </div>
-<div class='footnote-line'><span class='md-fn-count'>1</span> <span>デフォルトでは何も設定していなくても、イベントハンドラとして呼び出されたメソッドの第一引数にはeventオブジェクトが格納されています。</span> <a name='dfref-footnote-1' href='#ref-footnote-1' title='文書に戻る' class='reversefootnote' >↩</a></div></div></div></div>
+<p>&nbsp;</p><p>&nbsp;</p>
+<div class='footnotes-area'>
+    <hr/>
+    <div class='footnote-line'>
+        <span class='md-fn-count'>1</span> <span>デフォルトでは何も設定していなくても、イベントハンドラとして呼び出されたメソッドの第一引数にはeventオブジェクトが格納されています。</span> 
+        <a name='dfref-footnote-1' href='#ref-footnote-1' title='文書に戻る' class='reversefootnote' >↩</a>
+    </div>
+</div>
+</div>
+</div>
 </body>
 </html>
